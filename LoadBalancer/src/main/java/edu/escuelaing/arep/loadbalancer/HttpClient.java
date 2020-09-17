@@ -8,7 +8,7 @@ import java.io.IOException;
 public class HttpClient {
 
     private OkHttpClient httpClient;
-    private String baseUrl="http://ip-172-31-62-68.ec2.internal";
+    private String baseUrl="http://192.168.99.100";
     private String[] ports={":8081",":8082",":8083"};
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private int serverNumber=0;
@@ -25,7 +25,7 @@ public class HttpClient {
                 .url(baseUrl+ports[serverNumber]+path)
                 .get()
                 .build();
-        System.out.println("sendig request to"+baseUrl+ports[serverNumber]+path);
+        System.out.println("sendig GET request to "+baseUrl+ports[serverNumber]+path);
         Response response = httpClient.newCall(request).execute();
         return response.body().string();
     }
@@ -36,7 +36,7 @@ public class HttpClient {
                 .url(baseUrl+ports[serverNumber]+path)
                 .post(body)
                 .build();
-        System.out.println("sendig request to"+baseUrl+ports[serverNumber]+path);
+        System.out.println("sendig POST request to "+baseUrl+ports[serverNumber]+path);
         Response response = httpClient.newCall(request).execute();
         return response.body().string();
     }

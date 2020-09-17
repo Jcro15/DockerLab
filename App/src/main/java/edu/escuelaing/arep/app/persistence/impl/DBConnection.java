@@ -21,7 +21,7 @@ public class DBConnection implements MessagePersistence {
 
     public DBConnection() {
         uri = new MongoClientURI(
-                "mongodb://Camilo:password@ip-172-31-62-68.ec2.internal:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=Arep&authMechanism=SCRAM-SHA-1&3t.uriVersion=3");
+                "mongodb://Camilo:password@192.168.99.100:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=Arep&authMechanism=SCRAM-SHA-1&3t.uriVersion=3");
         mongoClient = new MongoClient(uri);
     }
 
