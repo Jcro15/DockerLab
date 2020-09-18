@@ -7,7 +7,7 @@ construido con Docker. La aplicación implementada permite almacenar y consultar
 ![dockerapp](img/dockerapp.jpg)
 
 Para la construcción de los contenedores se utilizó Docker ToolBox por lo que la aplicación local funciona sobre la dirección
-http://192.168.99.100:8088  y esto podría variar si no se utilia la misma herramienta.
+http://192.168.99.100:8088  y esto podría variar si no se utiliza la misma herramienta.
 
 Para probar la aplicación se publicaron algunos mensajes y se revisaron los logs del balanceador de carga asi como la presencia de los
 mensajes en la base de datos. En AWS se realizó en mismo ejercicio pero sin revisar el contenido de la base de datos.
