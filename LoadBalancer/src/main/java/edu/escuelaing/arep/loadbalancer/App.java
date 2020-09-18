@@ -13,7 +13,11 @@ import java.util.ArrayList;
 public class App 
 {
 
-
+    /**
+     * Controlador que provee 2 endpoints Get /mensajes y Post /mensajes, cada uno de estos redirige la petición hacia
+     * alguno de los nodos basandose en el algoritmo de round robin
+     * @param args
+     */
     public static void main( String[] args )
     {
         port(getPort());
@@ -41,6 +45,10 @@ public class App
 
 
     }
+    /**
+     * retorna el puerto definido por el entorno, si no hay puerto definido retorna 4567
+     * @return el puerto definido por el entorno, si no hay puerto definido retorna 4567
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

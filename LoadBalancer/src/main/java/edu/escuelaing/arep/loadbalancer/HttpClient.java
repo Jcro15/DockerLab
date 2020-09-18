@@ -19,7 +19,12 @@ public class HttpClient {
         httpClient=new OkHttpClient();
     }
 
-
+    /**
+     * envia una petición get al servidor correspondiente segun el round robin
+     * @param path direccion del endpoint
+     * @return la respuesta del servidor
+     * @throws IOException
+     */
     public String getMessages(String path) throws IOException {
         Request request = request = new Request.Builder()
                 .url(baseUrl+ports[serverNumber]+path)
@@ -30,6 +35,13 @@ public class HttpClient {
         return response.body().string();
     }
 
+    /**
+     * envia una petición post al servidor correspondiente segun el round robin
+     * @param message el cuerpo que se enviara en la peticion
+     * @param path la direccion del endpoint
+     * @return la respuesta del servidor
+     * @throws IOException
+     */
     public String postMessage( String message,String path) throws IOException {
         RequestBody body = RequestBody.create(message,JSON);
         Request request = new Request.Builder()
@@ -40,6 +52,9 @@ public class HttpClient {
         Response response = httpClient.newCall(request).execute();
         return response.body().string();
     }
+    /**
+     * Aumenta el contador del numero de servidor y realiza la operacio de modulo para mantenerlo en el rango de la lista
+     */
     public void roundRobin(){
         this.serverNumber=(this.serverNumber+1)% ports.length;
     }

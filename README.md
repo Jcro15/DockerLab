@@ -44,6 +44,11 @@ docker-compose up -d --scale web=3
 
 Al usar este comando con Docker ToolBox la aplicación se puede usar desde http://192.168.99.100:8088
 
+La documentación se puede generar en los directorios /LoadBalancer y /App usando el comando
+tambien se encuentra disponible en las carpetas Javadoc correspondientes
+```
+mvn javadoc:javadoc
+```
 
 ## Pruebas
 
