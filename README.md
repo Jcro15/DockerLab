@@ -44,6 +44,14 @@ docker-compose up -d --scale web=3
 
 Al usar este comando con Docker ToolBox la aplicación se puede usar desde http://192.168.99.100:8088
 
+Para cambiar la dirección se debe modificar en los archivos
+
+ \LoadBalancerLoadBalancer\src\main\java\edu\escuelaing\arep\loadbalancer\HttpClient.java
+   ![direccion](img/direccion1.jpg)
+ 
+ \App\src\main\java\edu\escuelaing\arep\app\persistence\impl\DBConnection.java
+ ![direccion2](img/direccion2.jpg)
+
 La documentación se puede generar en los directorios /LoadBalancer y /App usando el comando
 tambien se encuentra disponible en las carpetas Javadoc correspondientes
 ```
